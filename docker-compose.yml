@@ -1,0 +1,19 @@
+version: '3'
+services:
+  
+  peaceful_prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - C:\Users\Tyler\Desktop\docker_compose_test\prometheus.yml:/etc/prometheus/prometheus.yml
+    
+  gratifying_grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+
+  nullifying_node_exporter:
+    image: quay.io/prometheus/node-exporter
+    ports:
+      - "9100:9100"

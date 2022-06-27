@@ -1,0 +1,22 @@
+global:
+    scrape_interval: 2s
+    evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets: ["docker_compose_test-peaceful_prometheus-1:9090"]
+        labels:
+          label1: prom
+
+  - job_name: node
+    static_configs:
+      - targets: ["docker_compose_test-nullifying_node_exporter-1:9100"]
+        labels:
+          label2: node
+
+  - job_name: python_test
+    static_configs:
+      - targets: ["194.12.143.49:8000"]
+        labels:
+          label3: python
